@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # C Programming
 
 C is a general puropse programming language developed by Dennis Ritchie in Bell labs in year 1972. It is a functional, High-level, imparative programming language.
@@ -106,3 +107,6 @@ We also use some of the special characters in the C language, and all of them ho
 - (#) Hash/preprocessor – We use it for the preprocessor directive. This processor basically denotes that the user is utilizing the header file.
 - (.) Period – We use the period symbol for accessing a member of a union or a structure.
 - (~) Tilde – We use this special character in the form of a destructor for free memory.
+=======
+# c_2023
+>>>>>>> 99baf4df089bf2208eb27fb34c4defe6b6db135e
