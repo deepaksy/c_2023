@@ -15,8 +15,11 @@ void seperator(const char *value){
     str[totallength] = '\0';
     printf("\n%s\n",str);
 }
+// function declaration
 int * insertatbegining(int arr[]);
 void printarray(int array[],int size);
+int * insertatend(int arr[]);
+// main function
 void main(){
     int *arr;
     printf("Enter the number of item you want to allocate: ");
@@ -29,6 +32,8 @@ void main(){
     /**Insert at begining*/
     insertatbegining(arr);
     printarray(arr,n);
+    insertatend(arr);
+    printarray(arr,n);
 }
 
 int* insertatbegining(int arr[]){
@@ -36,17 +41,30 @@ int* insertatbegining(int arr[]){
     int data;
     printf("\n Enter the element to insert at begining: ");
     scanf("%d",&data);
-    int * temp = arr;
-    temp = realloc(temp,(n+1)*sizeof(int));
+    arr = realloc(arr,(n+1)*sizeof(int));
     for(int i=n;i>=0;i--){
-        temp[i+1] = temp[i];
+        arr[i+1] = arr[i];
     }
-    temp[0] = data;
+    arr[0] = data;
     n++;
-    return temp;
+    return arr;
 }
 
-
+int *insertatend(int arr[]){
+    int *tmp,val;
+    tmp = arr;
+    free(arr);
+    seperator(" Insert at End ");
+    printf("Enter value to insert: ");
+    scanf("%d",&val);
+    int newval = n+1;
+    size_t size_int = newval* sizeof(int);
+    printf("\nvalue of n: %ld\n",size_int);
+    tmp = (int *) realloc(tmp,size_int);
+    tmp[n-1] = val;
+    n++;
+    return tmp;
+}
 
 void printarray(int array[],int size){
     for(int n=0;n<size;n++){
