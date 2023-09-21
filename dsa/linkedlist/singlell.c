@@ -94,6 +94,22 @@ int deletenode(struct node *head,int el){
     return -1;
 }
 
+struct node* nthNode(struct node** head,int index){
+    struct node* tmp;
+    tmp = (*head);
+    int count=0;
+    while(tmp!=NULL){
+        count++;
+        if(count==index){
+            return (*head);
+        }
+        else{
+        (*head)=(*head)->next;
+        }
+    }
+
+}
+
 int main(){
     struct node *node;
     int choice=1,data;
@@ -130,6 +146,9 @@ int main(){
     else{
         printf("\nElement %d not found in linked list.",delel);
     }
+    struct node * nodetoget;
+    nodetoget = nthNode(&head,3);
+    printf("\nData at node: %d",nodetoget->data);
     // struct node *temp = head->next;
     // printf("\n data: %d",temp->data);
     return 0;
